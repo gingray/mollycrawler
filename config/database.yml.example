@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: #username
+  passsword: #password
+  pool: 5
+
+development:
+  <<: *default
+  database: dev_molly_crawler
+
+test:
+  <<: *default
+  database: test_molly_crawler
+

@@ -1,0 +1,3 @@
+class SampleWorker < WorkerBase
+  
+end

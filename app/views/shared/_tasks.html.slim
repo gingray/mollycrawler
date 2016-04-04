@@ -1,0 +1,24 @@
+table.table
+  thead
+    th #
+    th Delete
+    th Name
+    th Parser
+    th Parsed Links
+    th Link
+  tbody
+    - tasks.each do |task|
+      tr
+        td = task.id
+        td
+          a[href="/delete/#{task.id}"]
+            |&times;
+        td = task.tid
+        td = task.processor.constantize.name if task.processor
+        td = task.meta[:parsed_links]
+        td
+          a[href="/download/#{task.id}"]
+            |Download
+
+
+
