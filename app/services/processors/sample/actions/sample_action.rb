@@ -1,4 +1,4 @@
-class SampleAction < ActionBase
+class Sample::Actions::SampleAction < ActionBase
   def process url, data
     items = @doc.css('p.title a.title')
     @hash = {}

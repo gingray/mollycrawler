@@ -38,24 +38,21 @@
         button.close aria-hidden="true" data-dismiss="modal" type="button"  &times;
         h4.modal-title Add new task
       .modal-body
-        form.form-signin[action="/task" method="POST"]
+        = form_for Task.new, html: { class: 'form-signin' } do |f|
           h2.form-signin-heading
             | Add parsing task
           .form-group
             label.sr-only[for="name"]
               | Task name
-            input#name.form-control[name="name" type="text" placeholder="task name" required autofocus]
+            = f.text_field :tid, class: 'form-control'
           .form-group
             label.sr-only[for="inputProcessor"]
               | Select parser
-            select.form-control[name="processor"]
-              - ProcessorBase.subclasses.each do |processor|
-                option[value="#{processor.to_s}"]
-                  |#{processor.name}
+            = f.select :processor, ProcessorBase.subclasses.map { |p| [p.name, p.to_s] }, {}, class: 'form-control'
           .form-group
             label.sr-only[for="inputUrls"]
               | List of urls
-            textarea#inputUrls.form-control[name="data" required rows="15"]
+            = f.text_area :data, class: 'form-control', rows: 25
           button.btn.btn-primary.btn-block[type="submit" data-dissmis="modal"]
             | Start task
 

@@ -15,6 +15,8 @@ gem 'puma'
 gem "bower-rails", "~> 0.10.0"
 gem 'sidekiq'
 gem 'sinatra', :require => nil
+gem 'acts_as_tree'
+gem 'mechanize'
 
 group :development, :test do
   gem 'rspec-rails'

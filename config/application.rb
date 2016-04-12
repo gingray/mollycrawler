@@ -21,6 +21,7 @@ module Mollycrawler
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.autoload_paths << "#{config.root}/app/services/"
     config.autoload_paths << "#{config.root}/app/services/base/"
     config.autoload_paths << "#{config.root}/app/services/processors/"
 
