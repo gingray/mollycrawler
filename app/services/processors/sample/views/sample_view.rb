@@ -1,4 +1,4 @@
-class Sample::Views::SampleView < ViewBase
+class Sample::SampleView < ViewBase
   def get_links
     Task.where type_name: 'main', processor: SampleProcessor.to_s
   end

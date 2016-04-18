@@ -1,3 +1,3 @@
-class Sample::Workers::SampleWorker < WorkerBase
+class Sample::SampleWorker < WorkerBase
 
 end
